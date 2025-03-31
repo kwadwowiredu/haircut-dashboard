@@ -1,8 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Sidebar = ({ totalAppointments }) => {
-  // Format the count: show "99+" if count is 99 or greater
+const Sidebar = ({ totalAppointments, handleLogout }) => {
   const displayCount = totalAppointments >= 99 ? '99+' : totalAppointments;
 
   return (
@@ -27,7 +26,9 @@ const Sidebar = ({ totalAppointments }) => {
             >
               <i className="material-icons">calendar_month</i>
               <span>Appointments</span>
-              <span className="appointment-count">{totalAppointments}</span>
+              <span className="appointment-count" data-count={totalAppointments}>
+                {displayCount}
+              </span>
             </NavLink>
           </li>
           <li>
@@ -72,6 +73,7 @@ const Sidebar = ({ totalAppointments }) => {
         <NavLink
           to="/logout"
           className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+          onClick={handleLogout}
         >
           Logout
         </NavLink>

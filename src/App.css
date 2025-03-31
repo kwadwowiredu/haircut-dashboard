@@ -13,6 +13,81 @@ html, body {
   overflow: hidden; /* Ensure no overflow at the app level */
 }
 
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-image: url(./components/bgrd.avif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-box {
+  padding: 40px;
+  border-radius: 8px;
+  width: 350px;
+  height: 350px;
+  background-color: rgba(251, 247, 247, 0.120);
+  background-size: cover;
+  backdrop-filter: blur(20px);
+  box-shadow: 2px 5px 15px black;
+  text-align: center;
+}
+
+.login-box h2 {
+  margin-bottom: 20px;
+  color: #F0F8FF;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #F0F8FF;
+}
+
+.form-group input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  padding: 10px;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, .2);
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.error-message {
+  color: #fff;
+  font-size: 16px;
+  border: 2px solid red;
+  background-color: #ff0922;
+  margin-bottom: 15px;
+}
+
+.login-btn {
+  background-color: var(--highlight-color);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
 .sidebar {
   width: 220px;
   background-color: #F9FAF5;
@@ -476,37 +551,122 @@ html, body {
   padding: 20px;
 }
 
-.history-header {
-  padding-bottom: 10px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.history-details {
-  margin-top: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.month-selector select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-.history-list {
+.history-table {
+  margin-bottom: 30px;
+}
+
+.history-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px #e0e0e0;
+}
+
+.history-table th,
+.history-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.history-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.history-table td {
+  color: #555;
+}
+
+td.p-1{
+  font-size: 16px;
+  font-weight: 500;
+  color: #6E77EE;
+}
+
+td.p-2{
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(27, 216, 27);
+}
+
+td.p-3{
+  font-size: 16px;
+  font-weight: 500;
+  color: #d62332;
+}
+
+
+.history-table td:first-child {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.history-table input[type="checkbox"] {
+  margin: 0;
+}
+
+.monthly-summary {
+  margin-top: 20px;
+  background-color: #fff;
+  border: 2px solid #F9FAF5;
+  border-radius: 5px;
+  padding: 10px 20px 20px;
+}
+
+.monthly-summary h2 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.summary-stats {
+  display: flex;
   gap: 15px;
 }
 
-.history-card {
-  background-color: var(--card-bg);
-  padding: 15px;
+.summary-card {
+  flex: 1;
+  padding: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px var(--shadow-color);
+  text-align: left;
 }
 
-.history-card h3 {
-  margin: 0 0 10px 0;
-  font-size: 18px;
+.summary-card h3 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #616161;
 }
 
-.history-card p {
-  margin: 5px 0;
+.summary-card.total {
+  background-color: #e4e5f7; /* Light blue */
+}
+
+.summary-card.completed {
+  background-color: rgb(220, 240, 220); /* Light green */
+}
+
+.summary-card.cancelled {
+  background-color: #f8d9dc; /* Light red */
 }
 
 .modal {
